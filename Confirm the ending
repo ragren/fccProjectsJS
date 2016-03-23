@@ -1,0 +1,19 @@
+function confirmEnding(str, tar) {
+  var sStr= str.split("");
+  var rStr= sStr.reverse();
+  var sTar= tar.split("");
+  var rTar= sTar.reverse();
+  var answer= false;
+  i=0;
+  while (i<tar.length){
+    if (rStr[i] === rTar[i]){
+      answer = true;
+    }
+   else{
+     answer = false;
+   }   
+    i++;   
+  }
+  return answer;
+}
+confirmEnding("Bastian", "an");
