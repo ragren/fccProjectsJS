@@ -1,0 +1,17 @@
+function repeatStringNumTimes(str, num) {
+  var answer = [""];
+  i=0;
+  var sStr= str.split(" ");
+  if (num<0){
+  }
+  else{
+    while(i<num){
+    answer.push(str);
+      i++;
+  }
+  }  
+  answer = answer.join("");
+  return answer;
+}
+
+repeatStringNumTimes("abc", 2);
