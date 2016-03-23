@@ -1,0 +1,37 @@
+function truncateString(str, num) {
+  i = 0;
+  var calc = num - str.length;
+  var str2 = str.slice(0, num);
+  var array = str.split(" ");
+  var array2 = str2.split(" ");
+  var array3 = [];
+
+  if (array[0] != array2[0]) {
+    array3 = array2;
+  }
+
+  if (str.length === num) {
+
+    array3 = array;
+  }
+
+  if (str.length < num) {
+
+    array3 = array;
+  }
+
+  if (str.length > num) {
+    while (array[i] === array2[i]) {
+      array3.push(array2[i]);
+      i++;
+    }
+
+  }
+  array3 = array3.join(" ");
+  if (calc < 0) {
+    array3 += "...";
+  } else {}
+
+  return array3;
+}
+truncateString("Peter Piper picked a peck of pickled peppers", 43);
