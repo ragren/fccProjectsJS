@@ -1,0 +1,19 @@
+function mutation(arr) {
+  var a1 = arr[0].toLowerCase();
+  var a2 = arr[1].toLowerCase();
+  i = 0;
+  var answer = 0;
+  var reply = NaN;
+  while (i < a2.length) {
+    answer = a1.indexOf(a2[i]);
+    i++;
+    if (answer === -1) {
+      i = a2.length;
+      reply = false;
+    } else {
+      reply = true;
+    }
+  }
+  return reply;
+}
+mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]);
