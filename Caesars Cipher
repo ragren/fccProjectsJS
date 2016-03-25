@@ -1,0 +1,24 @@
+function rot13(str) {
+  var array = [];
+  var temp = [];
+  var decode = [];
+  for (i = 0; i < str.length; i++) {
+    temp = str.charCodeAt(i);
+    array.push(temp);
+  }
+  for (i = 0; i < str.length; i++) {
+    if (array[i] < 78 && array[i] > 64) {
+      array[i] += 13;
+    } else if (array[i] > 77 && array[i] < 91) {
+      array[i] -= 13;
+    }
+  }
+  for (i = 0; i < str.length; i++) {
+    temp = String.fromCharCode(array[i]);
+    decode.push(temp);
+  }
+  decode = decode.join("");
+  return decode;
+}
+
+rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.");
