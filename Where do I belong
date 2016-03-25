@@ -1,0 +1,15 @@
+function where(arr, num) {
+  var newNum = [];
+ var NewNum = newNum.push(num);
+  var finArr = newNum.concat(arr);
+  finArr.sort(function(a, b) {
+    return a - b;
+  });
+  for (i = 0; i < finArr.length; i++) {
+    if (finArr[i] === newNum[0]) {
+      return i;
+    }
+  }
+}
+
+where([2, 5, 10], 15);
