@@ -1,10 +1,10 @@
 function myReplace(str, before, after) {
   var bUp = before[0].toUpperCase() === before[0];
   var aUp = after[0].toUpperCase() === after[0];
-  if (bUp === true && aUp === false) {
+  if (bUp && !aUp) {
     after = after.replace(after[0], after[0].toUpperCase());
   } 
-  else if (bUp === false && aUp === true) {
+  else if (!bUp && aUp) {
     after = after.replace(after[0], after[0].toLowerCase());
   } 
   return str.replace(before, after);
