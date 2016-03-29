@@ -1,0 +1,25 @@
+function pair(str) {
+  str = str.split("");
+  var array = [], answer = [], base = ["A", "T", "C", "G"];  
+
+  for (var i = 0; str.length > i; i++) {
+    array.push(str[i]); 
+    if (str[i] === base[0]) {
+      array.push(base[1]);
+    } 
+    else if (str[i] === base[1]) {
+      array.push(base[0]);
+    } 
+    else if (str[i] === base[2]) {
+      array.push(base[3]);
+    } 
+    else if (str[i] === base[3]) {
+      array.push(base[2]);
+    }
+    answer.push(array.slice(0, 2));
+    array = [];    
+  }  
+  
+  return answer;
+}
+pair("CCG");
