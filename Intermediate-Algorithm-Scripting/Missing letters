@@ -1,0 +1,27 @@
+function fearNotLetter(str) {
+  var newstr = str.charCodeAt();
+  var rest = [], answer = [];
+  for (i = 0; str.length > i; i++) {
+    newstr = str.charCodeAt(i);
+    rest.push(newstr);
+  }
+  for (i = 0, o = 1; rest.length > o; i++, o++) {
+    if (rest[i] - rest[o] !== -1) {
+      answer.push(rest[i] + 1);
+    }
+  }
+  if (answer.length === 1) {
+    answer = String.fromCharCode(answer);
+  } 
+  else if (answer.length > 1) {
+    for (i = 0; answer.length > i; i++) {
+      answer[i] = String.fromCharCode(answer[i]);
+    }
+  } 
+  else {
+    answer = undefined;
+  }
+  return answer;
+}
+
+fearNotLetter("acegilnprtvxz");
