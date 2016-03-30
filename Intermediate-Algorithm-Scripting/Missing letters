@@ -6,14 +6,14 @@ function fearNotLetter(str) {
   }
   for (var start = 0, end = 1; rest.length > end; start++, end++) {
     if (rest[start] - rest[end] < 0) {
-      for (var limit = -1, extraCount = 1; rest[start] - rest[end] < limit; limit--, extraCount++) {
-        answer.push(rest[start] + extraCount);
+      for (var limit = -1, midCount = 1; rest[start] - rest[end] < limit; limit--, midCount++) {
+        answer.push(rest[start] + midCount);
       }
     }
   }
   if (answer.length > 0) {
-    for (var stringCount = 0; answer.length > stringCount; stringCount++) {
-      answer[stringCount] = String.fromCharCode(answer[stringCount]);
+    for (var endCount = 0; answer.length > endCount; endCount++) {
+      answer[endCount] = String.fromCharCode(answer[endCount]);
     }
     answer = answer.join("");
   } else {
