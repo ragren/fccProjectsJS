@@ -1,0 +1,18 @@
+function sumFibs(num) {
+  var total = [0, 1], sum = [];
+  for (count = 1; total[count] <= num; count++) {
+    if (total[count] + total[count - 1] <= num) {
+      total.push(total[count] + total[count - 1]);
+    }
+  }
+  for (sumCount = 0; total.length > sumCount; sumCount++) {
+    if (total[sumCount] % 2 !== 0) {
+      sum.push(total[sumCount]);
+    }
+  }
+  var answer = sum.reduce(function(a, b) {
+    return a + b;
+  });
+  return answer;
+}
+sumFibs(75024);
