@@ -1,0 +1,21 @@
+function unite(arr1, arr2, arr3) {
+  var arr = [];
+  for (var top = 0; arguments.length > top; top++) {
+    for (var bottom = 0; arguments[top].length > bottom; bottom++) {
+      arr.push(arguments[top][bottom]);
+    }
+  }
+  var newarr = [];
+  for (var value = 0; arr.length > value; value++) {
+    for (var filter = 0; arr.length > filter; filter++) {
+      if (arr[value] === arr[filter]) {
+        if (!newarr.hasOwnProperty(arr[value])) {
+          newarr.push(arr[value]);
+          value++;
+        }
+      }
+    }
+  }
+  return newarr;
+}
+unite([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]);
