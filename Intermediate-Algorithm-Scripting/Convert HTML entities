@@ -1,0 +1,15 @@
+function convert(str) {
+  str = str.split("");
+  var convert = ["&", "<", ">", '"', "'"];
+  var converted = ["&amp;", "&lt;", "&gt;", '&quot;', "&apos;"];
+  for (var value = 0; convert.length > value; value++) {
+    for (var count = 0; str.length > count; count++) {
+      if (str[count] === convert[value]) {
+        str[count] = converted[value];
+      }
+    }
+  }
+  return str.join("");
+}
+
+convert("Dolce & Gabbana");
