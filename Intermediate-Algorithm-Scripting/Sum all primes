@@ -1,0 +1,17 @@
+function sumPrimes(num) {
+  var div = 0;
+  var answer = 0;
+  for (var o = num; o !== 2; o--) {
+    for (var i = num; i !== 2; i--) {
+      if (o % i === 0) {
+        div += i;
+      }
+    }
+    if (div === o) {
+      answer += o;
+    }
+    div = 0;
+  }
+  return answer - 2;
+}
+sumPrimes(977);
