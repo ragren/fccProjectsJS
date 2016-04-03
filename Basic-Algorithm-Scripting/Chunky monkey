@@ -1,13 +1,8 @@
 function chunkArrayInGroups(arr, size) {
-i=size;
-a = 0;   
 var array =[];  
-while(a<arr.length){
-  array.push(arr.slice(a,i));
-  a+=size;
-  i+=size;
+for(start=0, end=size; start<arr.length; start+=size, end+=size){
+  array.push(arr.slice(start,end));
 }    
 return array;
 }
-
 chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3);
